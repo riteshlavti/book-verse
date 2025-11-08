@@ -19,9 +19,6 @@ public class BookCrudService {
     @Autowired
     BookMapper bookMapper;
 
-//    @Autowired
-//    ReviewServiceClient reviewServiceClient;
-
     public BookResponseDto getBookById(int id) {
         Book book;
         try{
@@ -32,17 +29,7 @@ public class BookCrudService {
         if (book == null) {
             throw new BookServiceException("Book with id " + id + " not found.");
         }
-        return BookResponseDto.builder()
-                .bookId(book.getBookId())
-                .title(book.getTitle())
-                .author(book.getAuthor())
-                .genre(book.getGenre())
-                .published_date(book.getPublishedDate())
-                .rating(0.0)
-                .reviews(null)
-//                .rating(reviewServiceClient.getBookRating(id))
-//                .reviews(reviewServiceClient.getBookReviews(id))
-                .build();
+        return bookMapper.entityToDto(book);
     }
 
     public String addBook(BookRequestDto book) {

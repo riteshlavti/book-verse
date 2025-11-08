@@ -13,6 +13,7 @@ import java.time.LocalDate;
 @Component
 @Entity
 @Builder
+@Table(name = "books")
 public class Book {
 
     @Id()

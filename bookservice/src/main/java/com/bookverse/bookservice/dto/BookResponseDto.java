@@ -7,6 +7,8 @@ import lombok.*;
 
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class BookResponseDto {
 
     private int bookId;
@@ -16,6 +18,4 @@ public class BookResponseDto {
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate published_date;
-    private double rating;
-    private List<ReviewDto> reviews;
 }

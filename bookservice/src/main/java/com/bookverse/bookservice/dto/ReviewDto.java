@@ -1,15 +1,19 @@
 package com.bookverse.bookservice.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ReviewDto {
-    private String reviewerName;
-    private int reviewRating;
-    private String reviewComment;
-    private Date reviewDate;
+    private String reviewer;
+    private double rating;
+    private String reviewText;
+    private LocalDateTime createdAt;
 }
