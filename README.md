@@ -1,5 +1,15 @@
 # BookVerse Microservices Project Overview 📚✨
 
+BookVerse is a modular microservices system for managing books, users, and reviews. It features:
+
+- A secure Gateway Service 🚪 for routing and authentication
+- Book 📖, User 👤, and Review 📝 services for core business logic
+- Flyway 🛠️ for automated database migrations in all backend services
+- CompletableFuture ⚡ for async operations in the Book Service
+- Built with Spring Boot 🚀, Eureka 🔎, and Spring Security 🔒 for scalability and protection
+
+Each service is independently deployable, supporting future growth and easy maintenance.
+
 BookVerse is a scalable, secure, and modular microservices-based system for managing books, users, and reviews. The architecture consists of four main services:
 
 - **Gateway Service** 🚪
