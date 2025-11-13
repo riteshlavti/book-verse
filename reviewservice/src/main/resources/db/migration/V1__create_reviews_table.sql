@@ -1,0 +1,9 @@
+CREATE TABLE reviews (
+    review_id INT AUTO_INCREMENT PRIMARY KEY,
+    book_id INT NOT NULL,
+    reviewer VARCHAR(255),
+    review_text VARCHAR(500),
+    rating DOUBLE NOT NULL CHECK (rating >= 1 AND rating <= 5),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
