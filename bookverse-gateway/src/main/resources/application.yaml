@@ -1,0 +1,9 @@
+bookverse-security:
+  public-endpoints:
+    GET:
+      - /api/books/**
+      - /api/book/**
+      - /api/review/**
+      - /api/books
+    POST:
+      - /api/auth/**
