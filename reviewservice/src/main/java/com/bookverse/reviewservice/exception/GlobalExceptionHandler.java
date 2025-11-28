@@ -61,7 +61,12 @@ public class GlobalExceptionHandler{
             body.put("status", HttpStatus.NOT_FOUND.value());
             body.put("error", "Resource Not Found");
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(body);
+        } else if (ex.getMessage().toLowerCase().contains("unauthorized")) {
+            body.put("status", HttpStatus.UNAUTHORIZED.value());
+            body.put("error", "Unauthorized");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(body);
         }
+
         body.put("status", HttpStatus.INTERNAL_SERVER_ERROR);
         body.put("error", "Review Service Error");
         return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
